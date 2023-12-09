@@ -64,6 +64,13 @@
 
                     span {
                         color: #0089ED;
+
+                        .link {
+                            text-decoration: none;
+                        }
+                        .link:visited {
+                            color: #0089ED;
+                        }
                     }
 
                 }
@@ -117,6 +124,14 @@
                     font-size: 12px;
                     font-weight: 500;
                 } 
+
+                .or {
+                    display: block;
+                    text-align: center;
+                    margin-top: 15px;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
 
                 input {
                     border: 1px solid #ADADAD;
