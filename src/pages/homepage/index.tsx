@@ -1,5 +1,4 @@
 import styles from './index.module.scss'
-import Navbar from '../../components/navbar/Navbar';
 import ProductCard from './card';
 import Carousel from '../../components/carousel';
 import bannerImage1 from '../../assets/banner/banner-1.png'
@@ -12,11 +11,10 @@ const Homepage = () => {
 
   return (
     <>
-        <Navbar />
         <div className={styles.container}>
           {/* banner */}
           <Carousel arr={carouselArray} />
-          <h3>All products</h3>
+            <h3>All products</h3>
           <ProductCard/>
         </div>
     </>
