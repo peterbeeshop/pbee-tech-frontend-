@@ -7,6 +7,7 @@ import styles from './index.module.scss';
 const Navbar = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.menu}>this is some test</div>
        <MenuIcon className={styles.hamburgerIcon} />
        <div className={styles.search}>
            <input type="text" placeholder='Search for a product' />
