@@ -1,0 +1,176 @@
+@import '../../assets/global.module.scss';
+
+.container {
+    background-color: aqua;
+    margin: 0;
+    position: relative;
+
+    p {
+        margin: 0;
+    }
+    .blueContainer {
+        background-color: $primary-color;
+        padding: 0 30px;
+        padding-top: 35px;
+        .logo {
+            width: 90px;
+            border-radius: 50%;
+        }
+        .innerContainer {
+            display: flex;
+
+            h3 {
+                color: #ffffff;
+                margin: 20px 0 0 0;
+            }
+            h6 {
+                color: #ffffff;
+                margin: 10px 0 20px 0;
+                font-size: 13px;
+                font-weight: 500;
+                
+            }
+            p {
+                font-size: 13px;
+                color: #ffffff;
+                font-weight: 400;
+                opacity: 0.8;
+            }
+            .banner {
+                width: 385px;
+                margin-top: -65px;
+            }
+
+            .card {
+                position: absolute;
+                right: 100px;
+                padding:20px ;
+                background-color: #ffffff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 20px;
+                width: 300px;
+                height: 460px;
+                
+                p {
+                    color: black;
+                }
+                .greeting {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+
+                    strong {
+                        color: $secondary-color;
+                    }
+
+                    span {
+                        color: $secondary-color;
+
+                        .link {
+                            text-decoration: none;
+                        }
+                        .link:visited {
+                            color: $secondary-color;
+                        }
+                    }
+
+                }
+                h3 {
+                    color: #000;
+                    margin: 1px;
+                    font-weight: 500;
+                    font-size: 32px;
+                    margin-top: -10px;
+                }
+                .googleSignIn{
+                    background-color: #E9F1FF;
+                    height: 65px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    
+                    span {
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: $primary-color;
+                    }
+
+                    .googleLogo {
+                        width: 34px;
+                        margin-right: 12px;
+                    }
+                }
+
+                .email {
+                    margin-top: 35px;
+        
+                }
+                .password {
+                    margin-top: 25px;
+
+                    span {
+                        color: $primary-color;
+                        display: block;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: end;
+                        margin-top: 10px;
+
+                    }
+                }
+
+                .text {
+                    font-size: 12px;
+                    font-weight: 500;
+                } 
+
+                .or {
+                    display: block;
+                    text-align: center;
+                    margin-top: 15px;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+
+                input {
+                    border: 1px solid #ADADAD;
+                    border-radius: 6px;
+                    margin-top: 10px;
+                    width: 95%;
+                    height: 30px;
+                    padding-left: 12px;
+                    
+                }
+                input:focus {
+                    outline: none;
+                    border-color: $primary-color;
+
+                }
+
+                button {
+                    background-color: $secondary-color;
+                    width: 100%;
+                    border: none;
+                    height: 38px;
+                    cursor: pointer;
+                    color: #ffffff;
+                    font-size: 15px;
+                    font-weight: 500;
+                    border-radius: 6px;
+                    margin-top: 30px;
+                }
+                button:hover {
+                    background-color: #377ae5;
+                }
+            }
+        }
+    }
+
+    .whiteContainer {
+        background-color: black;
+        color: white;
+
+    }
+}
