@@ -1,3 +1,58 @@
 
-$primary-color: #4285F4;
-$secondary-color: #0089ED;
+// Color Defination
+$blue-light: #4285F4;
+$blue-dark: #0089ED;
+$blue-darkest: #084086;
+$dark-cyan: #007185;
+$strong-orange: #C45500;
+$onyx: #2e2e2e;
+$white-background: #fefefe; 
+$gray-background: #EAEDED;
+$orange-background: #FBBC05;
+$cherry-red: #ff3658;
+$light-slate: #6D6A6A;
+$dorian: #DDDDDD;
+
+
+// Color Assignment
+$primary-color: $blue-light;
+$secondary-color: $blue-dark;
+$hairlines-color: $dorian;
+$dark-text-color: $onyx;
+$light-text-color: $dark-cyan;
+$light-background: $white-background;
+$dark-background: $gray-background;
+$emphasized-text-color: $strong-orange;
+$deemphasized-text-color: $light-slate;
+$error-color: $cherry-red;
+
+/* || Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Size
+$font-40: 40px;
+$font-24: 24px;
+$font-20: 20px;
+$font-16: 16px;
+$font-14: 14px;
+
+// Family
+$primary-font-family: "Work Sans";
+
+/* || Global styling */
+:global(body *) {
+    font-family: $primary-font-family;
+
+}
+
+:global(h4) {
+    font-size: 22px;
+    font-weight: 700;
+    color: $dark-text-color;
+}
+
+:global(p) {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+}

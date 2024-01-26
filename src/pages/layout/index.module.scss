@@ -1,3 +1,5 @@
+@import '../../assets/global.module.scss';
+
 .container {
     position: relative;
 
@@ -8,7 +10,7 @@
 
     .sidenav {
         position: absolute;
-        background-color: #ffffff;
+        background-color: $light-background;
         box-shadow: 5px 5px 5px #888888, -5px -5px 5px #ffffff;
         height: 100vh;
         left: -20%;
@@ -44,7 +46,6 @@
                 padding: 0 15px;
                 padding-bottom: 15px;
                 h4 {
-                    font-size: 20px;
                     margin: 15px 0;
                     margin-top: 20px;
                 }
