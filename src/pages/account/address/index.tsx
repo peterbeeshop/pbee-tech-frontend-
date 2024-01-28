@@ -1,8 +1,9 @@
-import React from 'react'
-
 const Address = () => {
   return (
-    <div>Address</div>
+    <div>
+      <p>Your account </p> <p> Your Orders</p>
+      <h6>Your Orders</h6>
+    </div>
   )
 }
 

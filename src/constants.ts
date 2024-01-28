@@ -1,75 +1,77 @@
-import ordersImage from './assets/account/orders.svg';
-import securityImage from './assets/account/security.svg';
-import addressImage from './assets/account/address.svg';
-import watchlistImage from './assets/account/watchlist.svg';
+import ordersImage from './assets/account/orders.svg'
+import securityImage from './assets/account/security.svg'
+import addressImage from './assets/account/address.svg'
+import watchlistImage from './assets/account/watchlist.svg'
 
-export const sidenavLinks = [{
+export const sidenavLinks = [
+  {
     heading: 'Electronics',
     links: [
       {
-        name:'Phones',
-        to:'#'
+        name: 'Phones',
+        to: '#',
       },
       {
-        name:'Computers',
-        to:'#'
+        name: 'Computers',
+        to: '#',
       },
       {
-        name:'Smart Watch',
-        to:'#'
+        name: 'Smart Watch',
+        to: '#',
       },
-    ]
-  }, {
+    ],
+  },
+  {
     heading: 'Entertainment',
     links: [
       {
-        name:'Video games & consoles',
-        to:'#'
+        name: 'Video games & consoles',
+        to: '#',
       },
-    ]
-  }, {
+    ],
+  },
+  {
     heading: 'Help & Settings',
     links: [
       {
-        name:'Your Account',
-        to:'/account'
+        name: 'Your Account',
+        to: '/account',
       },
       {
-        name:'Customer Service',
-        to:'#'
+        name: 'Customer Service',
+        to: '#',
       },
       {
-        name:'Sign out',
-        to:'/login'
+        name: 'Sign out',
+        to: '/login',
       },
-    ]
-  }
+    ],
+  },
 ]
-
 
 export const accountLinks = [
   {
     image: ordersImage,
     heading: 'Your Orders',
     text: 'Track, return, cancel an order or buy again',
-    link: '/account/orders'
+    link: '/account/orders',
   },
   {
     image: securityImage,
     heading: 'Login & Security',
     text: 'Edit login, name, and mobile number',
-    link: '/account/security'
+    link: '/account/security',
   },
   {
     image: addressImage,
     heading: 'Your Addresses',
     text: 'Edit, remove or set default address',
-    link: '/account/address'
+    link: '/account/address',
   },
   {
     image: watchlistImage,
     heading: 'Your Watchlist',
     text: 'View the products you have saved for later',
-    link: '/account/watchlist'
-  }
+    link: '/account/watchlist',
+  },
 ]

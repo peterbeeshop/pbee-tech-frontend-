@@ -1,64 +1,60 @@
-
-import Homepage from './pages/homepage';
-import Login from './pages/login';
-import SignUp from './pages/signup';
-import Cart from './pages/cart';
+import Homepage from './pages/homepage'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import Cart from './pages/cart'
 import { createBrowserRouter } from 'react-router-dom'
-import Root from './layout/root';
-import ErrorPage from './error-page';
-import Account from './pages/account';
-import Address from './pages/account/address';
-import Orders from './pages/account/orders';
-import Security from './pages/account/security';
-import Watchlist from './pages/account/watchlist';
-
+import Root from './layout/root'
+import ErrorPage from './error-page'
+import Account from './pages/account'
+import Address from './pages/account/address'
+import Orders from './pages/account/orders'
+import Security from './pages/account/security'
+import Watchlist from './pages/account/watchlist'
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root/>,
+    element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/home",
-        element: <Homepage />
+        path: '/home',
+        element: <Homepage />,
       },
       {
-        path: "/cart",
-        element: <Cart />
+        path: '/cart',
+        element: <Cart />,
       },
       {
-        path: "/account",
+        path: '/account',
         element: <Account />,
         children: [
           {
             path: 'address',
-            element: <Address />
+            element: <Address />,
           },
           {
             path: 'orders',
-            element: <Orders />
+            element: <Orders />,
           },
           {
             path: 'security',
-            element: <Security />
+            element: <Security />,
           },
           {
             path: 'watchlist',
-            element: <Watchlist />
-          }
-        ]
+            element: <Watchlist />,
+          },
+        ],
       },
-
-    ]
+    ],
   },
   {
     path: '/login',
-    element: <Login/>
+    element: <Login />,
   },
   {
     path: '/signup',
-    element: <SignUp />
-  }
+    element: <SignUp />,
+  },
 ])
-
