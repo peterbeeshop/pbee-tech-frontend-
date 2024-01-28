@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './index.module.scss';
 import { Outlet, Link } from 'react-router-dom'
-import { sidenavLinks } from '../../constants'
+import { sidenavLinks } from '../constants'
 
 const Root = () => {
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
@@ -45,7 +45,9 @@ const Root = () => {
           </Link>
         </div>
       </div>
-      <Outlet />
+      <div className={styles.outlet}>
+        <Outlet />
+      </div>
     </div>
   )
 }

@@ -1,3 +1,8 @@
+import ordersImage from './assets/account/orders.svg';
+import securityImage from './assets/account/security.svg';
+import addressImage from './assets/account/address.svg';
+import watchlistImage from './assets/account/watchlist.svg';
+
 export const sidenavLinks = [{
     heading: 'Electronics',
     links: [
@@ -27,7 +32,7 @@ export const sidenavLinks = [{
     links: [
       {
         name:'Your Account',
-        to:'#'
+        to:'/account'
       },
       {
         name:'Customer Service',
@@ -35,8 +40,36 @@ export const sidenavLinks = [{
       },
       {
         name:'Sign out',
-        to:'#'
+        to:'/login'
       },
     ]
+  }
+]
+
+
+export const accountLinks = [
+  {
+    image: ordersImage,
+    heading: 'Your Orders',
+    text: 'Track, return, cancel an order or buy again',
+    link: '/account/orders'
+  },
+  {
+    image: securityImage,
+    heading: 'Login & Security',
+    text: 'Edit login, name, and mobile number',
+    link: '/account/security'
+  },
+  {
+    image: addressImage,
+    heading: 'Your Addresses',
+    text: 'Edit, remove or set default address',
+    link: '/account/address'
+  },
+  {
+    image: watchlistImage,
+    heading: 'Your Watchlist',
+    text: 'View the products you have saved for later',
+    link: '/account/watchlist'
   }
 ]
