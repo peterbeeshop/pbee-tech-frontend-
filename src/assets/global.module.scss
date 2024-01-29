@@ -8,6 +8,7 @@ $onyx: #2e2e2e;
 $white-background: #fefefe;
 $gray-background: #eaeded;
 $orange-background: #fbbc05;
+$orange-background-hover: #e0ab0f;
 $cherry-red: #ff3658;
 $light-slate: #6d6a6a;
 $dorian: #dddddd;
@@ -23,6 +24,7 @@ $dark-background: $gray-background;
 $emphasized-text-color: $strong-orange;
 $deemphasized-text-color: $light-slate;
 $error-color: $cherry-red;
+$hover-color: $orange-background;
 
 /* || Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -49,7 +51,6 @@ $primary-font-family: 'Work Sans';
 }
 
 :global(p) {
-  font-weight: 500;
   font-size: 16px;
   margin: 0;
 }

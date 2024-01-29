@@ -1,0 +1,58 @@
+@import '../../../assets/global.module.scss';
+
+.container {
+
+    .subHeading {
+        display: flex;
+
+        .linkTag {
+            color: $light-text-color;
+            text-decoration: none;
+            margin-right: 5px;
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+
+        p {
+            color: $emphasized-text-color;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+    }
+
+    h5 {
+        font-size: 22px;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+
+    .innerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px dotted $hairline-color;
+        width: 340px;
+        height: 300px;
+        cursor: pointer;
+        border-radius: 10px;
+
+        &:hover {
+            border: 1px dotted $light-slate;
+        }
+
+        .addIcon {
+            color: #ADADAD;
+            font-size: 44px;
+
+        }
+
+        h4 {
+            color: $blue-darkest;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+}

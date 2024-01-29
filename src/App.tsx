@@ -10,6 +10,7 @@ import Address from './pages/account/address'
 import Orders from './pages/account/orders'
 import Security from './pages/account/security'
 import Watchlist from './pages/account/watchlist'
+import CreateAddress from './pages/account/address/create-address'
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
           {
             path: 'address',
             element: <Address />,
+          },
+          {
+            path: 'address/create-address',
+            element: <CreateAddress />,
           },
           {
             path: 'orders',
