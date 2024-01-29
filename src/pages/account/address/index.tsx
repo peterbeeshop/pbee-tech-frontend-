@@ -7,14 +7,17 @@ const Address = () => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.subHeading}>
-        <Link className={styles.linkTag} to={'/account'}>
-          Your Account
-        </Link>{' '}
-        &gt;
-        <p> Your Address</p>
+      <section className={styles.breadcrumb}>
+        <div className={styles.subHeading}>
+          <Link className={styles.linkTag} to={'/account'}>
+            Your Account
+          </Link>{' '}
+          &gt;
+          <p> Your Address</p>
+        </div>
+        <h5>Your Addresses</h5>
       </section>
-      <h5>Your Addresses</h5>
+
       <div
         onClick={() => navigate('/account/address/create-address')}
         className={styles.innerContainer}

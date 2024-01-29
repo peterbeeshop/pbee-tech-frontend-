@@ -1,0 +1,12 @@
+@import '../../../../assets/global.module.scss';
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        width: fit-content;
+    }
+}

@@ -9,18 +9,20 @@ const CreateAddress = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <section className={styles.subHeading}>
-          <Link className={styles.linkTag} to={'/account'}>
-            Your Account
-          </Link>{' '}
-          &gt;
-          <Link className={styles.linkTag} to={'/account/address'}>
-            Your Address
-          </Link>{' '}
-          &gt;
-          <p>New Address</p>
+        <section className={styles.breadcrumb}>
+          <div className={styles.subHeading}>
+            <Link className={styles.linkTag} to={'/account'}>
+              Your Account
+            </Link>{' '}
+            &gt;
+            <Link className={styles.linkTag} to={'/account/address'}>
+              Your Address
+            </Link>{' '}
+            &gt;
+            <p>New Address</p>
+          </div>
+          <h5>Add a new Address</h5>
         </section>
-        <h5>Add a new Address</h5>
         <div>
           <div>
             <h6>Full name (first & last name)</h6>
