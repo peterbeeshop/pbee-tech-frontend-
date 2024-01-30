@@ -11,6 +11,10 @@ const Watchlist = () => {
       image: phoneImage,
       description:
         'this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6',
+      links: {
+        firstLink: 'Add to cart',
+        secondLink: 'Remove',
+      },
     },
     {
       name: 'iphone 7 plus',

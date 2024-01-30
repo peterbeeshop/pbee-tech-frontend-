@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './index.module.scss'
 
@@ -31,15 +30,19 @@ const ProductCard = ({ data }: MyComponentProps) => {
                 <h6>${price}</h6>
                 <div className={styles.descripionAndLinkContainer}>
                   <p>{description}</p>
-                  <div className={styles.linkContainer}>
-                    <Link className={styles.link} to={'#'}>
-                      Add to cart
-                    </Link>
-                    <p>|</p>
-                    <Link className={styles.link} to={'#'}>
-                      Remove
-                    </Link>
-                  </div>
+                  {links === undefined ? (
+                    ''
+                  ) : (
+                    <div className={styles.linkContainer}>
+                      <Link className={styles.link} to={'#'}>
+                        Add to cart
+                      </Link>
+                      <p>|</p>
+                      <Link className={styles.link} to={'#'}>
+                        Remove
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
