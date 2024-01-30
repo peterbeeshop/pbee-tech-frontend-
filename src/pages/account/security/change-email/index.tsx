@@ -19,6 +19,19 @@ const ChangeEmail = () => {
           </div>
           <h5>Change your email</h5>
         </section>
+        <div className={styles.content}>
+          <p>
+            If you want to change the current email address associated with this
+            account, you <br />
+            may do so below. Be sure to click the Save Changes button when you
+            are done.
+          </p>
+          <div>
+            <h6>New name</h6>
+            <input type="text" placeholder="email" />
+          </div>
+          <button>Save changes</button>
+        </div>
       </div>
     </div>
   )

@@ -19,6 +19,22 @@ const ChangePassword = () => {
           </div>
           <h5>Change your password</h5>
         </section>
+        <div className={styles.content}>
+          <p>Use the form below to change your password.</p>
+          <div>
+            <h6>Current Password</h6>
+            <input type="text" placeholder="current password" />
+          </div>
+          <div>
+            <h6>New Password</h6>
+            <input type="text" placeholder="Your new password" />
+          </div>
+          <div>
+            <h6>Confirm Password</h6>
+            <input type="text" placeholder="confirm new password" />
+          </div>
+          <button>Save changes</button>
+        </div>
       </div>
     </div>
   )

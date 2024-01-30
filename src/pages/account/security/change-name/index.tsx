@@ -27,7 +27,7 @@ const ChangeName = () => {
           </p>
           <div>
             <h6>New name</h6>
-            <input type="text" placeholder="peter beeshop" />
+            <input type="text" placeholder="full name" />
           </div>
           <button>Save changes</button>
         </div>
