@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './index.module.scss'
-import phoneImage from './phoneImage.png'
 
 type ProductCardType = {
   image: string
@@ -22,11 +21,11 @@ const ProductCard = ({ data }: MyComponentProps) => {
   return (
     <>
       {data.map((product) => {
-        const { description, image, name, price, links } = product
+        const { image, description, name, price, links } = product
         return (
           <div className={styles.container}>
             <div className={styles.innerContainer}>
-              <img src={phoneImage} alt="product-img" />
+              <img src={image} alt="product-img" />
               <div className={styles.contentContainer}>
                 <h5>{name}</h5>
                 <h6>${price}</h6>

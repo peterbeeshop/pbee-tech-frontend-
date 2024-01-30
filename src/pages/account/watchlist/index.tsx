@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom'
 import ProductCard from '../../../components/product-card'
 import styles from './index.module.scss'
+import phoneImage from '../../../assets/dummy-pics/phoneImage.png'
 
 const Watchlist = () => {
   const mywatchlist = [
     {
       name: 'iphone 6',
       price: 200,
-      image: '',
+      image: phoneImage,
       description:
         'this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6',
     },
     {
       name: 'iphone 7 plus',
       price: 400,
-      image: '',
+      image: phoneImage,
       description: 'this is a little description of the 7 plus',
     },
   ]
