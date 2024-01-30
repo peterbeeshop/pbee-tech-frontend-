@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <div className={styles.blueContainer}>
-        <Link to="/home">
+        <Link to="/">
           <img src={logo} alt="logo" className={styles.logo} />
         </Link>
         <div className={styles.innerContainer}>
