@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom'
+import ProductCard from '../../../components/product-card'
 import styles from './index.module.scss'
 
 const Watchlist = () => {
   const mywatchlist = [
-    // { price: '$200', nameOfProduct: 'iphone 6', imagesOfProduct: '' },
-    // { price: '$300', nameOfProduct: 'iphone 7 plus', imagesOfProduct: '' },
+    {
+      name: 'iphone 6',
+      price: 200,
+      image: '',
+      description:
+        'this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6this is a little description of the iphone 6',
+    },
+    {
+      name: 'iphone 7 plus',
+      price: 400,
+      image: '',
+      description: 'this is a little description of the 7 plus',
+    },
   ]
 
   return (
@@ -30,7 +42,7 @@ const Watchlist = () => {
             </Link>
           </div>
         ) : (
-          'some staff to show'
+          <ProductCard data={mywatchlist} />
         )}
       </div>
     </div>
