@@ -51,7 +51,7 @@ const Watchlist = () => {
             </Link>
           </div>
         ) : (
-          <ProductCard data={mywatchlist} />
+          <ProductCard data={mywatchlist} showQuantity={false} />
         )}
       </div>
     </div>

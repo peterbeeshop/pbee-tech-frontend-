@@ -1,26 +1,17 @@
 import { Link } from 'react-router-dom'
+import { ProductCardType } from '../../types'
 import styles from './index.module.scss'
-
-type ProductCardType = {
-  image: string
-  name: string
-  price: number
-  description: string
-  links?: {
-    firstLink: string
-    secondLink: string
-  }
-}
 
 type MyComponentProps = {
   data: ProductCardType[]
+  showQuantity: boolean //a boolean to whether show the quantity or the description
 }
 
-const ProductCard = ({ data }: MyComponentProps) => {
+const ProductCard = ({ data, showQuantity }: MyComponentProps) => {
   return (
     <>
       {data.map((product) => {
-        const { image, description, name, price, links } = product
+        const { image, description, name, price, links, quantity } = product
         return (
           <div className={styles.container}>
             <div className={styles.innerContainer}>
@@ -29,7 +20,14 @@ const ProductCard = ({ data }: MyComponentProps) => {
                 <h5>{name}</h5>
                 <h6>${price}</h6>
                 <div className={styles.descripionAndLinkContainer}>
-                  <p>{description}</p>
+                  {showQuantity ? (
+                    <h6>
+                      Quantity: <strong>{quantity}</strong>
+                    </h6>
+                  ) : (
+                    <p>{description}</p>
+                  )}
+
                   {links === undefined ? (
                     ''
                   ) : (

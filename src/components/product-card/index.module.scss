@@ -39,6 +39,17 @@
                 align-items: center;
                 width: 100%;
 
+                h6 {
+                    margin: 0px 0;
+                    font-weight: 500;
+                    font-size: 16px; 
+
+                    strong {
+                        color: $light-text-color;
+                        font-weight: 500;
+                        margin-left: 10px;
+                    }
+                }
                 p:first-child {
                     width: 60%;
                     font-size: 14px;
