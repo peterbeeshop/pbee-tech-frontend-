@@ -11,6 +11,7 @@ import { ProductCardType } from '../../../types'
 import phoneImage from '../../../assets/dummy-pics/phoneImage.png'
 import NotShipped from './not-shipped'
 import Shipped from './shipped'
+import Cancelled from './cancelled'
 
 const Orders = () => {
   const [value, setValue] = useState('1')
@@ -72,7 +73,9 @@ const Orders = () => {
           <TabPanel value="3">
             <Shipped myOrders={orders} />
           </TabPanel>
-          <TabPanel value="4">4</TabPanel>
+          <TabPanel value="4">
+            <Cancelled myOrders={orders} />
+          </TabPanel>
         </TabContext>
       </Box>
     </div>
