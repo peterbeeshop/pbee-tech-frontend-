@@ -11,7 +11,8 @@ const Shipped = ({ myOrders }: MyOrdersType) => {
     <div className={styles.container}>
       {myOrders.length === 0 ? (
         <p className={styles.noOrderText}>
-          Looks like you haven't placed any order yet.
+          Either all your orders have been shipped & received or are in the{' '}
+          <br /> process of being shipped if any.
         </p>
       ) : (
         <ProductCard data={myOrders} showQuantity />
