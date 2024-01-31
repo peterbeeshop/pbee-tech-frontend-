@@ -21,6 +21,10 @@ const Watchlist = () => {
       price: 400,
       image: phoneImage,
       description: 'this is a little description of the 7 plus',
+      links: {
+        firstLink: 'Add to cart',
+        secondLink: 'Remove',
+      },
     },
   ]
 

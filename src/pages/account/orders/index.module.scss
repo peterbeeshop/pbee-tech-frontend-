@@ -1,0 +1,26 @@
+@import "../../../assets/global.module.scss";
+
+
+.container {
+    width: 80%;
+
+    .tabList {
+        border-bottom: 1px solid $hairline-color;
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+
+
+        .tab {
+            margin-left: 80px;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .tab:first-child {
+            margin-left: 0;
+        }
+
+
+    }
+}
