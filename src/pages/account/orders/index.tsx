@@ -9,23 +9,24 @@ import styles from './index.module.scss'
 import MyOrders from './my-orders'
 import { ProductCardType } from '../../../types'
 import phoneImage from '../../../assets/dummy-pics/phoneImage.png'
+import NotShipped from './not-shipped'
 
 const Orders = () => {
   const [value, setValue] = useState('1')
   const [orders, setOrders] = useState<ProductCardType[]>([
-    {
-      name: 'iphone 6',
-      price: 200,
-      image: phoneImage,
-      quantity: 1,
-    },
-    {
-      name: 'iphone 7 plus',
-      price: 400,
-      image: phoneImage,
-      description: 'this is a little description of the 7 plus',
-      quantity: 3,
-    },
+    // {
+    //   name: 'iphone 6',
+    //   price: 200,
+    //   image: phoneImage,
+    //   quantity: 1,
+    // },
+    // {
+    //   name: 'iphone 7 plus',
+    //   price: 400,
+    //   image: phoneImage,
+    //   description: 'this is a little description of the 7 plus',
+    //   quantity: 3,
+    // },
   ])
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -64,7 +65,9 @@ const Orders = () => {
           <TabPanel value="1">
             <MyOrders myOrders={orders} />
           </TabPanel>
-          <TabPanel value="2">Item Two</TabPanel>
+          <TabPanel value="2">
+            <NotShipped myOrders={orders} />
+          </TabPanel>
           <TabPanel value="3">Item Three</TabPanel>
           <TabPanel value="4">4</TabPanel>
         </TabContext>
