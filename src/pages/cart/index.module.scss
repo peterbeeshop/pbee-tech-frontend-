@@ -1,7 +1,6 @@
 @import '../../assets/global.module.scss';
 
 .container {
-    background-color: $dark-background;
     padding: 5px 15px;
 
     .emptyCart {
@@ -23,6 +22,56 @@
             &:hover {
                 color: $hover-color;
             }
+        }
+    }
+
+    .cart {
+        display: flex;
+        justify-content: space-between;
+        .shoppingCart {
+            background-color: $dark-background;
+            padding: 0px 20px;
+            width: 70%;
+
+            h5 {
+                margin-bottom: 10px;
+            }
+        }
+        .checkout {
+            background-color: $dark-background;
+            width: 20%;
+            height: fit-content;
+            padding: 15px;
+
+            h6 {
+                margin: 0;
+                font-weight: 500;
+                font-size: 16px;
+                color: black;
+            }
+
+            p {
+                color: $light-text-color;
+                margin: 10px 0;
+                font-weight: 500
+            }
+
+            button {
+                background-color: $orange-background;
+                border: none;
+                width: 100%;
+                height: 32px;
+                border-radius: 6px;
+                font-weight: 400;
+                font-size: 15px;
+                margin-top: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $orange-background-hover;
+                }
+            }
+
         }
     }
 }

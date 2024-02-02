@@ -1,0 +1,56 @@
+@import '../../../assets/global.module.scss';
+
+.container {
+    display: flex;
+    border-bottom: 1px solid $hairline-color;
+    background-color: $dark-background;
+    padding: 15px 0;
+
+    img {
+        object-fit: cover;
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin-right: 50px;
+    }
+    div {
+        width: 100%;
+        h5 {
+            margin: 0;
+            font-weight: 500;
+            color: black;
+        }
+    
+        h6 {
+            margin: 30px 0;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        
+        select {
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .linkContainer {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            .link {
+                text-decoration: none;
+                color: $light-text-color;
+    
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
+    }
+}
