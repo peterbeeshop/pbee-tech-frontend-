@@ -6,4 +6,10 @@
   h3 {
     color: $primary-color;
   }
+
+  .productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }

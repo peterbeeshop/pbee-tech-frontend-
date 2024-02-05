@@ -14,7 +14,11 @@ const Homepage = () => {
         {/* banner */}
         <Carousel arr={carouselArray} />
         <h3>All products</h3>
-        <ProductCard />
+        <div className={styles.productContainer}>
+          {Array.from({ length: 20 }, (_, index) => (
+            <ProductCard key={index} />
+          ))}
+        </div>
       </div>
     </>
   )

@@ -11,3 +11,9 @@ export type ProductCardType = {
       secondLink: string
     }
 }
+
+  try {
+    
+  } catch (error) {
+    
+  }
