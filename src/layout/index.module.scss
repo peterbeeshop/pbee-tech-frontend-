@@ -117,11 +117,12 @@
       align-items: center;
       width: 15%;
 
-      p {
+      .link {
         font-size: 18px;
         font-weight: 600;
         color: white;
         cursor: pointer;
+        text-decoration: none;
       }
 
       .shoppingCart {

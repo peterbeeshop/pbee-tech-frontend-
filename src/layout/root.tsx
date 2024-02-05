@@ -47,7 +47,10 @@ const Root = () => {
           <SearchIcon className={styles.searchIcon} />
         </div>
         <div className={styles.cart}>
-          <p>Sign in</p>
+          <Link className={styles.link} to={'/login'}>
+            Sign in
+          </Link>
+
           <Link to={'/cart'}>
             <ShoppingCartIcon className={styles.shoppingCart} />
           </Link>
