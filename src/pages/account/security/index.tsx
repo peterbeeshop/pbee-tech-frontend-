@@ -16,7 +16,7 @@ const Security = () => {
     },
     {
       heading: 'Primary mobile number',
-      text: '+260974741027',
+      text: '+26-XXXXXXXXXX',
       link: '#',
     },
     {

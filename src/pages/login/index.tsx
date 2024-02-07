@@ -50,10 +50,8 @@ const Login = () => {
               <span>Sign in with Google</span>
             </div>
             <div className={styles.email}>
-              <p className={styles.text}>
-                Enter your username or email address
-              </p>
-              <input type="text" placeholder="Username or email address" />
+              <p className={styles.text}>Enter your email address</p>
+              <input type="text" placeholder="Email address" />
             </div>
             <div className={styles.password}>
               <p className={styles.text}>Enter your password</p>
