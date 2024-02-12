@@ -12,7 +12,6 @@ const SignUp = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [message, setMessage] = useState('s')
 
   const handleSubmit = async () => {
     try {
@@ -25,8 +24,7 @@ const SignUp = () => {
 
         // Set the message based on the status code
         if (status === 409) {
-          setMessage(data) // Message for conflict (user already exists)
-          toast.error(data)
+          toast.error(data) // Message for conflict (user already exists)
         } else {
           toast.error('An unexpected error occurred. Please try again!') // Default message for other errors
         }
@@ -49,7 +47,6 @@ const SignUp = () => {
         <div className={styles.innerContainer}>
           <section>
             <h3>Sign Up to</h3>
-            {message}
             <h6>Pbee Tech</h6>
             <p>
               Pbee Tech is an online and physical store that sells <br />{' '}
@@ -80,7 +77,8 @@ const SignUp = () => {
             <div className={styles.email}>
               <p className={styles.text}>Enter your email address</p>
               <input
-                type="text"
+                type="email"
+                id="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 placeholder="Email address"
