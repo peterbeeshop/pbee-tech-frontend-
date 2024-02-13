@@ -18,7 +18,7 @@ const SignUp = () => {
   const handleSubmit = async () => {
     if (email !== '' && password !== '') {
       dispatch(userActions.createUser({ email, password }))
-      toast.success('Account has successfully been created!')
+      navigate('/')
     } else {
       toast.error('Email or password should have a value')
     }

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
 import { toast } from 'react-toastify'
+import { handleApiError } from '../errors/api-error'
 import { signup } from '../services/auth.services'
 import { AppUser } from '../types/user'
 
@@ -28,12 +28,9 @@ const createUser = createAsyncThunk<void, { email: string; password: string }>(
     try {
       const user = await signup(userInfo.email, userInfo.password)
       dispatch(userActions.setUser(user))
+      toast.success('Account has successfully been created!')
     } catch (error) {
-      if (axios.isAxiosError(error) && error.response?.data?.message) {
-        toast.error(error.response?.data?.message)
-      } else {
-        toast.error(error)
-      }
+      handleApiError(error)
     }
   },
 )
