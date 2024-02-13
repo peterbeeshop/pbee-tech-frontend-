@@ -4,37 +4,23 @@ import styles from '../login/index.module.scss'
 import logo from '../../assets/logo.png'
 import googleLogo from '../../assets/google.png'
 import banner from '../login/assets/saly.svg'
-import { signup } from '../../services/auth.services'
 import { useNavigate } from 'react-router-dom'
+import { userActions } from '../../store/user'
 import { toast } from 'react-toastify'
+import { useAppDispatch } from '../../store/hooks'
 
 const SignUp = () => {
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = async () => {
-    try {
-      const user = await signup(email, password)
-      toast.success(user.data)
-      navigate('/login')
-    } catch (error: any) {
-      if (error.response) {
-        const { status, data } = error.response
-
-        // Set the message based on the status code
-        if (status === 409) {
-          toast.error(data) // Message for conflict (user already exists)
-        } else {
-          toast.error('An unexpected error occurred. Please try again!') // Default message for other errors
-        }
-      } else if (error.request) {
-        // The request was made but no response was received
-        toast.error('No response from the server.')
-      } else {
-        // Something happened in setting up the request that triggered an error
-        toast.error('An unexpected error occurred. Please try again!')
-      }
+    if (email !== '' && password !== '') {
+      dispatch(userActions.createUser({ email, password }))
+      toast.success('Account has successfully been created!')
+    } else {
+      toast.error('Email or password should have a value')
     }
   }
 
