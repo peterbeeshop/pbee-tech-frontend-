@@ -1,11 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import logo from '../../assets/logo.png'
 import googleLogo from '../../assets/google.png'
 import banner from './assets/saly.svg'
+import { useAppDispatch } from '../../store/hooks'
+import { userActions } from '../../store/user'
+import { toast } from 'react-toastify'
 
 const Login = () => {
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const onSuccess = () => navigate('/')
+
+  const handleLogin = () => {
+    if (email !== '' && password !== '') {
+      dispatch(userActions.loginUser({ email, password, onSuccess }))
+    } else {
+      toast.error('Email or Password should have a value')
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.blueContainer}>
@@ -51,14 +69,24 @@ const Login = () => {
             </div>
             <div className={styles.email}>
               <p className={styles.text}>Enter your email address</p>
-              <input type="text" placeholder="Email address" />
+              <input
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="Email address"
+              />
             </div>
             <div className={styles.password}>
               <p className={styles.text}>Enter your password</p>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="Password"
+              />
               <span>forgot password</span>
             </div>
-            <button>Sign in</button>
+            <button onClick={handleLogin}>Sign in</button>
           </section>
         </div>
       </div>

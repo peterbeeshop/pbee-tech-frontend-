@@ -15,12 +15,13 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit = async () => {
+  const onSuccess = () => navigate('/')
+
+  const handleSubmit = () => {
     if (email !== '' && password !== '') {
-      dispatch(userActions.createUser({ email, password }))
-      navigate('/')
+      dispatch(userActions.createUser({ email, password, onSuccess }))
     } else {
-      toast.error('Email or password should have a value')
+      toast.error('Email or Password should have a value')
     }
   }
 
