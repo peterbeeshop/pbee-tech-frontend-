@@ -4,14 +4,31 @@ import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import CloseIcon from '@mui/icons-material/Close'
 import styles from './index.module.scss'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useNavigate } from 'react-router-dom'
 import { sidenavLinks } from '../constants'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { userActions, userSelectors } from '../store/user'
+import { toast } from 'react-toastify'
 
 const Root = () => {
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const userToken = useAppSelector(userSelectors.selectToken)
+
   const [isSidenavOpen, setIsSidenavOpen] = useState(false)
 
   const handleOpensidenav = () => {
     setIsSidenavOpen(!isSidenavOpen)
+  }
+
+  const onSuccess = () => navigate('/login')
+
+  const handleLogout = () => {
+    if (userToken) {
+      dispatch(userActions.logoutUser({ onSuccess }))
+    } else {
+      toast.error('An unexpected error occured. Try again later...')
+    }
   }
 
   return (
@@ -29,9 +46,17 @@ const Root = () => {
             <section>
               <h4>{navLink.heading}</h4>
               {navLink.links.map((link) => (
-                <Link className={styles.linkTag} to={link.to}>
-                  {link.name}
-                </Link>
+                <>
+                  {link.name !== 'Sign out' ? (
+                    <Link className={styles.linkTag} to={link.to}>
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <p className={styles.linkTag} onClick={handleLogout}>
+                      {link.name}
+                    </p>
+                  )}
+                </>
               ))}
             </section>
           ))}

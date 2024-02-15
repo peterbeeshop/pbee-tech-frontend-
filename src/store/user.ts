@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify'
+import { RootState } from '.'
 import { handleApiError } from '../errors/api-error'
 import { signup, logout, login } from '../services/auth.services'
 import { AppUser } from '../types/user'
+import { useAppSelector } from './hooks'
 
 interface IUser {
   user: Partial<AppUser>
@@ -30,19 +32,12 @@ const userSlice = createSlice({
       state.user = action.payload.user
       state.token = action.payload.token
     },
-    setLogin: (
+    setLogout: (
       state,
-      action: PayloadAction<{
-        user: Partial<AppUser>
-        token: TokenType
-      }>,
+      action: PayloadAction<{ user: Partial<AppUser>; token: TokenType }>,
     ) => {
       state.user = action.payload.user
       state.token = action.payload.token
-    },
-    setLogout: (state, action) => {
-      state.user = {}
-      state.token = undefined
     },
   },
 })
@@ -67,7 +62,7 @@ const loginUser = createAsyncThunk<
 >('user/login', async (userInfo, { dispatch }) => {
   try {
     const result = await login(userInfo.email, userInfo.password)
-    dispatch(userActions.setLogin({ user: result.user, token: result.token }))
+    dispatch(userActions.setUser({ user: result.user, token: result.token }))
     toast.success('Login was successful!')
     userInfo.onSuccess()
   } catch (error) {
@@ -75,14 +70,17 @@ const loginUser = createAsyncThunk<
   }
 })
 
-const logoutUser = createAsyncThunk<void, void>(
+const logoutUser = createAsyncThunk<void, { onSuccess: () => void }>(
   'user/logout',
   async (_, { dispatch }) => {
     try {
       const result = await logout()
-      console.log(result)
-      dispatch(userActions.setLogout)
-    } catch (error) {}
+      dispatch(userActions.setLogout({ user: {}, token: undefined }))
+      toast.success(result)
+      _.onSuccess()
+    } catch (error) {
+      toast.error('An unexpected error occured. Try again later...')
+    }
   },
 )
 
@@ -91,6 +89,13 @@ export const userActions = {
   createUser,
   loginUser,
   logoutUser,
+}
+
+export const userSelectors = {
+  selectUser: (state: RootState) => state.user.user,
+  selectToken: (state: RootState) => state.user.token,
+  selectIsUserLoggedIn: (state: RootState) =>
+    Boolean(state.user.token && state.user.user.id),
 }
 
 export default userSlice.reducer
