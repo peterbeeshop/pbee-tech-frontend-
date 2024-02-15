@@ -1,8 +1,8 @@
+import { createBrowserRouter } from 'react-router-dom'
 import Homepage from './pages/homepage'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 import Cart from './pages/cart'
-import { createBrowserRouter } from 'react-router-dom'
 import Root from './layout/root'
 import ErrorPage from './errors/error-page'
 import Account from './pages/account'
@@ -14,6 +14,7 @@ import CreateAddress from './pages/account/address/create-address'
 import ChangeName from './pages/account/security/change-name'
 import ChangeEmail from './pages/account/security/change-email'
 import ChangePassword from './pages/account/security/change-password'
+import AuthLayout from './layout/authLayout'
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/account',
-        element: <Account />,
+        element: <AuthLayout child={<Account />} />,
         children: [
           {
             path: 'address',

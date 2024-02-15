@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import styles from './index.module.scss'
 import logo from '../../assets/logo.png'
 import googleLogo from '../../assets/google.png'
@@ -11,10 +11,11 @@ import { toast } from 'react-toastify'
 const Login = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const state = useLocation().state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSuccess = () => navigate('/')
+  const onSuccess = () => navigate(state.from ? state.from : '/')
 
   const handleLogin = () => {
     if (email !== '' && password !== '') {

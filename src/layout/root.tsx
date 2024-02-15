@@ -23,7 +23,7 @@ const Root = () => {
     setIsSidenavOpen(!isSidenavOpen)
   }
 
-  const onSuccess = () => navigate('/login')
+  const onSuccess = () => navigate('/')
 
   const handleLogout = () => {
     if (userToken) {
@@ -54,9 +54,17 @@ const Root = () => {
                       {link.name}
                     </Link>
                   ) : (
-                    <p className={styles.linkTag} onClick={handleLogout}>
-                      {link.name}
-                    </p>
+                    <>
+                      {isUserLoggedIn ? (
+                        <p className={styles.linkTag} onClick={handleLogout}>
+                          {link.name}
+                        </p>
+                      ) : (
+                        <Link className={styles.linkTag} to={'/login'}>
+                          Sign in
+                        </Link>
+                      )}
+                    </>
                   )}
                 </>
               ))}
@@ -75,7 +83,9 @@ const Root = () => {
         </div>
         <div className={styles.cart}>
           {isUserLoggedIn ? (
-            <p className={styles.link}>Sign out</p>
+            <p className={styles.link} onClick={handleLogout}>
+              Sign out
+            </p>
           ) : (
             <Link className={styles.link} to={'/login'}>
               Sign in
