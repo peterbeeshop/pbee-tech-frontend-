@@ -14,6 +14,8 @@ const Root = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const userToken = useAppSelector(userSelectors.selectToken)
+  const isUserLoggedIn = useAppSelector(userSelectors.selectIsUserLoggedIn)
+  const user = useAppSelector(userSelectors.selectUser)
 
   const [isSidenavOpen, setIsSidenavOpen] = useState(false)
 
@@ -37,7 +39,7 @@ const Root = () => {
         className={`${styles.sidenav} ${isSidenavOpen ? styles.sidenavOpen : styles.sidenavClosed}`}
       >
         <div className={styles.innerContainer}>
-          <p>Hello, Peter 👋</p>
+          <p>Hello {user.firstName} 👋</p>
           <CloseIcon onClick={handleOpensidenav} className={styles.closeIcon} />
         </div>
 
@@ -72,9 +74,13 @@ const Root = () => {
           <SearchIcon className={styles.searchIcon} />
         </div>
         <div className={styles.cart}>
-          <Link className={styles.link} to={'/login'}>
-            Sign in
-          </Link>
+          {isUserLoggedIn ? (
+            <p className={styles.link}>Sign out</p>
+          ) : (
+            <Link className={styles.link} to={'/login'}>
+              Sign in
+            </Link>
+          )}
 
           <Link to={'/cart'}>
             <ShoppingCartIcon className={styles.shoppingCart} />

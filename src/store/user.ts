@@ -4,7 +4,6 @@ import { RootState } from '.'
 import { handleApiError } from '../errors/api-error'
 import { signup, logout, login } from '../services/auth.services'
 import { AppUser } from '../types/user'
-import { useAppSelector } from './hooks'
 
 interface IUser {
   user: Partial<AppUser>
@@ -95,7 +94,7 @@ export const userSelectors = {
   selectUser: (state: RootState) => state.user.user,
   selectToken: (state: RootState) => state.user.token,
   selectIsUserLoggedIn: (state: RootState) =>
-    Boolean(state.user.token && state.user.user.id),
+    Boolean(state.user.token && state.user.user._id),
 }
 
 export default userSlice.reducer
