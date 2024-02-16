@@ -1,17 +1,20 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useAppSelector } from '../../../store/hooks'
+import { userSelectors } from '../../../store/user'
 import styles from './index.module.scss'
 
 const Security = () => {
+  const user = useAppSelector(userSelectors.selectUser)
   const navigate = useNavigate()
   const constantContent = [
     {
-      heading: 'Name',
-      text: 'peter beeshop',
+      heading: 'Names',
+      text: user.firstName ? `${user.firstName} ${user.lastName}` : '--------',
       link: 'change-name',
     },
     {
       heading: 'Email',
-      text: 'peterbeeshop07@gmail.com',
+      text: user.email,
       link: 'change-email',
     },
     {

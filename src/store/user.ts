@@ -31,6 +31,13 @@ const userSlice = createSlice({
       state.user = action.payload.user
       state.token = action.payload.token
     },
+    setNames: (
+      state,
+      action: PayloadAction<{ firstName: string; lastName: string }>,
+    ) => {
+      state.user.firstName = action.payload.firstName
+      state.user.lastName = action.payload.lastName
+    },
     setLogout: (
       state,
       action: PayloadAction<{ user: Partial<AppUser>; token: TokenType }>,
