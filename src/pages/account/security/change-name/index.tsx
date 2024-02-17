@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { changeUserNames } from '../../../../store/account/security'
+import { editUserActions } from '../../../../store/account/security'
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks'
 import { userSelectors } from '../../../../store/user'
 import styles from './index.module.scss'
@@ -9,12 +9,14 @@ const ChangeName = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const user = useAppSelector(userSelectors.selectUser)
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [firstName, setFirstName] = useState(user.firstName!)
+  const [lastName, setLastName] = useState(user.lastName!)
 
   const onSuccess = () => navigate(-1)
   const handleEdit = () => {
-    dispatch(changeUserNames({ firstName, lastName, onSuccess }))
+    dispatch(
+      editUserActions.changeUserNames({ firstName, lastName, onSuccess }),
+    )
   }
 
   return (
