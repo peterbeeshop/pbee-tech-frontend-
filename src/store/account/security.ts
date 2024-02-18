@@ -4,6 +4,7 @@ import { handleApiError } from '../../errors/api-error'
 import {
   changeEmail,
   changeNames,
+  changePassword,
 } from '../../services/account/security.services'
 import { userActions } from '../user'
 
@@ -45,7 +46,22 @@ const changeUserEmail = createAsyncThunk<
   }
 })
 
+const changeUserPassword = createAsyncThunk<
+  void,
+  { oldPassword: string; newPassword: string; onSuccess?: () => void }
+>('security/edit-password', async (argument, { dispatch }) => {
+  const { oldPassword, newPassword, onSuccess } = argument
+  try {
+    const data = (await changePassword(oldPassword, newPassword)) as string
+    toast.success(data)
+    onSuccess?.()
+  } catch (error) {
+    handleApiError(error)
+  }
+})
+
 export const editUserActions = {
   changeUserEmail,
   changeUserNames,
+  changeUserPassword,
 }
