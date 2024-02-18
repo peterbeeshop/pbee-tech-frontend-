@@ -25,6 +25,11 @@ const Root = () => {
 
   const onSuccess = () => navigate('/')
 
+  const handleRedirect = (link: string) => {
+    setIsSidenavOpen(!isSidenavOpen)
+    navigate(link)
+  }
+
   const handleLogout = () => {
     if (userToken) {
       dispatch(userActions.logoutUser({ onSuccess }))
@@ -50,9 +55,12 @@ const Root = () => {
               {navLink.links.map((link) => (
                 <>
                   {link.name !== 'Sign out' ? (
-                    <Link className={styles.linkTag} to={link.to}>
+                    <p
+                      className={styles.linkTag}
+                      onClick={() => handleRedirect(link.to)}
+                    >
                       {link.name}
-                    </Link>
+                    </p>
                   ) : (
                     <>
                       {isUserLoggedIn ? (
