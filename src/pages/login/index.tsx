@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './index.module.scss'
 import logo from '../../assets/logo.png'
 import googleLogo from '../../assets/google.png'
@@ -7,20 +7,17 @@ import banner from './assets/saly.svg'
 import { useAppDispatch } from '../../store/hooks'
 import { userActions } from '../../store/user'
 import { toast } from 'react-toastify'
-import { cartActions } from '../../store/cart'
 
 const Login = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  // const state = useLocation().state
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const onSuccess = () => {
     navigate('/')
-    dispatch(cartActions.setCartItems())
   }
-  // const onSuccess = () => navigate(state.from ? state.from : '/')
 
   const handleLogin = () => {
     if (email !== '' && password !== '') {

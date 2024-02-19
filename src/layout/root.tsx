@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
@@ -9,6 +9,7 @@ import { sidenavLinks } from '../constants'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { userActions, userSelectors } from '../store/user'
 import { toast } from 'react-toastify'
+import { cartActions } from '../store/cart'
 
 const Root = () => {
   const dispatch = useAppDispatch()
@@ -17,6 +18,9 @@ const Root = () => {
   const isUserLoggedIn = useAppSelector(userSelectors.selectIsUserLoggedIn)
   const user = useAppSelector(userSelectors.selectUser)
 
+  useEffect(() => {
+    dispatch(cartActions.setCartItems())
+  }, [dispatch, user.cart])
   const [isSidenavOpen, setIsSidenavOpen] = useState(false)
 
   const handleOpensidenav = () => {
@@ -50,10 +54,10 @@ const Root = () => {
 
         <div className={styles.nameContainer}>
           {sidenavLinks.map((navLink) => (
-            <section>
+            <section key={navLink.id}>
               <h4>{navLink.heading}</h4>
               {navLink.links.map((link) => (
-                <>
+                <div key={Math.floor(Math.random() * 100)}>
                   {link.name !== 'Sign out' ? (
                     <p
                       className={styles.linkTag}
@@ -74,7 +78,7 @@ const Root = () => {
                       )}
                     </>
                   )}
-                </>
+                </div>
               ))}
             </section>
           ))}

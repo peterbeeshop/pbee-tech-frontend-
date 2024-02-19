@@ -5,6 +5,7 @@ import watchlistImage from './assets/account/watchlist.svg'
 
 export const sidenavLinks = [
   {
+    id: 1,
     heading: 'Electronics',
     links: [
       {
@@ -22,6 +23,7 @@ export const sidenavLinks = [
     ],
   },
   {
+    id: 2,
     heading: 'Entertainment',
     links: [
       {
@@ -31,6 +33,7 @@ export const sidenavLinks = [
     ],
   },
   {
+    id: 3,
     heading: 'Help & Settings',
     links: [
       {

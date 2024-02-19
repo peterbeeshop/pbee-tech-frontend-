@@ -42,6 +42,9 @@ const userSlice = createSlice({
     setEmail: (state, action: PayloadAction<{ email: string }>) => {
       state.user.email = action.payload.email
     },
+    setUpdateCart: (state, action: PayloadAction<{ cart: string[] }>) => {
+      state.user.cart = action.payload.cart
+    },
     setLogout: (
       state,
       action: PayloadAction<{ user: Partial<AppUser>; token: TokenType }>,

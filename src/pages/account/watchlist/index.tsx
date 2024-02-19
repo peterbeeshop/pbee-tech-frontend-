@@ -6,6 +6,7 @@ import phoneImage from '../../../assets/dummy-pics/phoneImage.png'
 const Watchlist = () => {
   const mywatchlist = [
     {
+      _id: '1',
       name: 'iphone 6',
       price: 200,
       image: phoneImage,
@@ -17,6 +18,7 @@ const Watchlist = () => {
       },
     },
     {
+      _id: '2',
       name: 'iphone 7 plus',
       price: 400,
       image: phoneImage,
