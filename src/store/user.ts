@@ -72,8 +72,8 @@ const loginUser = createAsyncThunk<
   try {
     const result = await login(userInfo.email, userInfo.password)
     dispatch(userActions.setUser({ user: result.user, token: result.token }))
-    toast.success('Login was successful!')
     userInfo.onSuccess()
+    toast.success('Login was successful!')
   } catch (error) {
     handleApiError(error)
   }

@@ -7,15 +7,20 @@ import banner from './assets/saly.svg'
 import { useAppDispatch } from '../../store/hooks'
 import { userActions } from '../../store/user'
 import { toast } from 'react-toastify'
+import { cartActions } from '../../store/cart'
 
 const Login = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const state = useLocation().state
+  // const state = useLocation().state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSuccess = () => navigate(state.from ? state.from : '/')
+  const onSuccess = () => {
+    navigate('/')
+    dispatch(cartActions.setCartItems())
+  }
+  // const onSuccess = () => navigate(state.from ? state.from : '/')
 
   const handleLogin = () => {
     if (email !== '' && password !== '') {

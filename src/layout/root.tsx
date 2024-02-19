@@ -23,7 +23,7 @@ const Root = () => {
     setIsSidenavOpen(!isSidenavOpen)
   }
 
-  const onSuccess = () => navigate('/')
+  const onSuccess = () => navigate('/login')
 
   const handleRedirect = (link: string) => {
     setIsSidenavOpen(!isSidenavOpen)
