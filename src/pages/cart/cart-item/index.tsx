@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ProductCardType } from '../../../types'
+import { ProductCardType } from '../../../types/product'
 import styles from './index.module.scss'
 
 type CartItemType = {
