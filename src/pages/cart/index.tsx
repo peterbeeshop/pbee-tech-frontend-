@@ -2,23 +2,11 @@ import { Link } from 'react-router-dom'
 import styles from './index.module.scss'
 import phoneImage from '../../assets/dummy-pics/phoneImage.png'
 import CartItem from './cart-item'
+import { useAppSelector } from '../../store/hooks'
+import { cartSelectors } from '../../store/cart'
 
 const Cart = () => {
-  const itemsInCart = [
-    {
-      name: 'iphone 6',
-      price: 200,
-      image: phoneImage,
-      quantity: 1,
-    },
-    {
-      name: 'iphone 7 plus',
-      price: 400,
-      image: phoneImage,
-      description: 'this is a little description of the 7 plus',
-      quantity: 3,
-    },
-  ]
+  const itemsInCart = useAppSelector(cartSelectors.itemsInCart)
   return (
     <div className={styles.container}>
       {itemsInCart.length === 0 ? (

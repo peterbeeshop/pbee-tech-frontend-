@@ -5,7 +5,7 @@ import { CartType } from '../types/cart'
 import { ProductCardType } from '../types/product'
 
 interface ICart {
-  cart: Partial<CartType>
+  cart: CartType
 }
 
 const initialState: ICart = {
@@ -16,11 +16,14 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    setCart: (state, action: PayloadAction<Partial<CartType>>) => {
+    setCart: (state, action: PayloadAction<CartType>) => {
       state.cart = action.payload
     },
     addToCart: (state, action: PayloadAction<{ product: ProductCardType }>) => {
       state.cart = [...state.cart, action.payload.product]
+    },
+    clearCart: (state) => {
+      state.cart = []
     },
     removeProductFromCart: () => {},
   },
@@ -30,7 +33,6 @@ const setCartItems = createAsyncThunk<void, void>(
   'cart/set-cart',
   async (_, { dispatch }) => {
     const result = (await getCartItems()) as ProductCardType[]
-    console.log('cart', result)
     dispatch(cartActions.setCart(result))
   },
 )
@@ -38,7 +40,7 @@ const setCartItems = createAsyncThunk<void, void>(
 export const cartActions = { ...cartSlice.actions, setCartItems }
 
 export const cartSelectors = {
-  usersCart: (state: RootState) => state.cart.cart,
+  itemsInCart: (state: RootState) => state.cart.cart,
 }
 
 export default cartSlice.reducer

@@ -4,6 +4,7 @@ import { RootState } from '.'
 import { handleApiError } from '../errors/api-error'
 import { signup, logout, login } from '../services/auth.services'
 import { AppUser } from '../types/user'
+import { cartActions } from './cart'
 
 interface IUser {
   user: Partial<AppUser>
@@ -85,6 +86,7 @@ const logoutUser = createAsyncThunk<void, { onSuccess: () => void }>(
     try {
       const result = await logout()
       dispatch(userActions.setLogout({ user: {}, token: undefined }))
+      dispatch(cartActions.clearCart())
       toast.success(result)
       _.onSuccess()
     } catch (error) {
