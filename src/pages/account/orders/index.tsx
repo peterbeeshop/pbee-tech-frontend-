@@ -7,7 +7,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import { Link } from 'react-router-dom'
 import styles from './index.module.scss'
 import MyOrders from './my-orders'
-import { ProductCardType } from '../../../types/product'
+import { ProductType } from '../../../types/product'
 import phoneImage from '../../../assets/dummy-pics/phoneImage.png'
 import NotShipped from './not-shipped'
 import Shipped from './shipped'
@@ -15,7 +15,7 @@ import Cancelled from './cancelled'
 
 const Orders = () => {
   const [value, setValue] = useState('1')
-  const [orders, setOrders] = useState<ProductCardType[]>([
+  const [orders, setOrders] = useState<ProductType[]>([
     // {
     //   name: 'iphone 6',
     //   price: 200,

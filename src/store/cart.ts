@@ -7,7 +7,7 @@ import {
   getCartItemsService,
 } from '../services/cart.services'
 import { CartType } from '../types/cart'
-import { ProductCardType } from '../types/product'
+import { ProductType } from '../types/product'
 import { userActions } from './user'
 
 interface ICart {
@@ -36,7 +36,7 @@ const setCartItems = createAsyncThunk<void, void>(
   'cart/set-cart',
   async (_, { dispatch }) => {
     try {
-      const result = (await getCartItemsService()) as ProductCardType[]
+      const result = (await getCartItemsService()) as ProductType[]
       dispatch(cartActions.setCart(result))
     } catch (error) {
       handleApiError(error)
@@ -44,7 +44,7 @@ const setCartItems = createAsyncThunk<void, void>(
   },
 )
 
-const addProductToCart = createAsyncThunk<void, { product: ProductCardType }>(
+const addProductToCart = createAsyncThunk<void, { product: ProductType }>(
   'cart/add-to-cart',
   async (argument, { dispatch }) => {
     try {

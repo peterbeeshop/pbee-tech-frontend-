@@ -1,5 +1,5 @@
 //type for a single product
-export type ProductCardType = {
+export type ProductType = {
   _id: string
   image: string
   name: string

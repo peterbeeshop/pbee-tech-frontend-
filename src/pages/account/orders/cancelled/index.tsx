@@ -1,11 +1,11 @@
 import React from 'react'
 
 import ProductCard from '../../../../components/product-card'
-import { ProductCardType } from '../../../../types/product'
+import { ProductType } from '../../../../types/product'
 import styles from '../my-orders/index.module.scss'
 
 type MyOrdersType = {
-  myOrders: ProductCardType[]
+  myOrders: ProductType[]
 }
 
 const Cancelled = ({ myOrders }: MyOrdersType) => {

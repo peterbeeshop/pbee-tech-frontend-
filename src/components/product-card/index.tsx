@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { ProductCardType } from '../../types/product'
+import { ProductType } from '../../types/product'
 import styles from './index.module.scss'
 
 type MyComponentProps = {
-  data: ProductCardType[]
+  data: ProductType[]
   showQuantity: boolean //a boolean to whether show the quantity or the description
 }
 

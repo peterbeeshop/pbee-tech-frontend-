@@ -6,10 +6,10 @@ import bannerImage1 from '../../assets/banner/banner-1.png'
 import bannerImage2 from '../../assets/banner/banner-2.png'
 import bannerImage3 from '../../assets/banner/banner-3.png'
 import { getAllProducts } from '../../services/product.services'
-import { ProductCardType } from '../../types/product'
+import { ProductType } from '../../types/product'
 
 const Homepage = () => {
-  const [allProducts, setAllProducts] = useState<ProductCardType[]>([])
+  const [allProducts, setAllProducts] = useState<ProductType[]>([])
   const carouselArray = [bannerImage1, bannerImage2, bannerImage3]
 
   useEffect(() => {

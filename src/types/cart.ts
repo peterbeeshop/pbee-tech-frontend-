@@ -1,3 +1,3 @@
-import { ProductCardType } from './product'
+import { ProductType } from './product'
 
-export type CartType = ProductCardType[]
+export type CartType = ProductType[]

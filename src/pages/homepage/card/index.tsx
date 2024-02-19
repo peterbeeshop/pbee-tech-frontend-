@@ -1,11 +1,11 @@
 import stockPic from './iphone-x.jpeg'
 import styles from './index.module.scss'
-import { ProductCardType } from '../../../types/product'
+import { ProductType } from '../../../types/product'
 import { useAppDispatch } from '../../../store/hooks'
 import { cartActions } from '../../../store/cart'
 
 type ProductCardProps = {
-  product: ProductCardType
+  product: ProductType
 }
 const ProductCard = ({ product }: ProductCardProps) => {
   const dispatch = useAppDispatch()
