@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { userActions, userSelectors } from '../store/user'
 import { toast } from 'react-toastify'
 import { cartActions } from '../store/cart'
+import { addressActions } from '../store/account/address'
 
 const Root = () => {
   const dispatch = useAppDispatch()
@@ -21,6 +22,11 @@ const Root = () => {
   useEffect(() => {
     dispatch(cartActions.setCartItems())
   }, [dispatch, user.cart])
+
+  useEffect(() => {
+    dispatch(addressActions.getUserAddress())
+  }, [dispatch])
+
   const [isSidenavOpen, setIsSidenavOpen] = useState(false)
 
   const handleOpensidenav = () => {
@@ -37,6 +43,7 @@ const Root = () => {
   const handleLogout = () => {
     if (userToken) {
       dispatch(userActions.logoutUser({ onSuccess }))
+      dispatch(addressActions.setClearAddress())
     } else {
       toast.error('An unexpected error occured. Try again later...')
     }

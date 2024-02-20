@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { addressActions } from '../../../../store/account/address'
+import { useAppDispatch } from '../../../../store/hooks'
 import { AddressType } from '../../../../types/address'
 import styles from './index.module.scss'
 
 const CreateAddress = () => {
+  const dispatch = useAppDispatch()
+
   const [addressDetails, setAddressDetails] = useState<AddressType>({
     fullName: '',
     street: '',
@@ -14,6 +18,7 @@ const CreateAddress = () => {
 
   const navigate = useNavigate()
   const handleSubmit = () => {
+    dispatch(addressActions.createAddress({ address: addressDetails }))
     // return navigate('/account/address')
   }
   return (

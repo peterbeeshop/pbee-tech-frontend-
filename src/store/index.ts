@@ -12,10 +12,12 @@ import {
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import userReducer from './user'
 import cartReducer from './cart'
+import addressReducer from './account/address'
 
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
+  address: addressReducer,
 })
 
 /**
