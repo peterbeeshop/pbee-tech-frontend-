@@ -14,7 +14,6 @@ const CreateAddress = () => {
 
   const navigate = useNavigate()
   const handleSubmit = () => {
-    console.log(addressDetails)
     // return navigate('/account/address')
   }
   return (
