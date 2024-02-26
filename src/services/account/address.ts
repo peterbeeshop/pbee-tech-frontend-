@@ -16,3 +16,7 @@ export const createAddressService = async (address: AddressType) => {
     })
   ).data
 }
+
+export const deleteAddressService = async (_id: string) => {
+  return (await apiClient.post('/delete-address', { _id })).data
+}

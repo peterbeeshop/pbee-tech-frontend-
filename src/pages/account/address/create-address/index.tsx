@@ -19,7 +19,7 @@ const CreateAddress = () => {
   const navigate = useNavigate()
   const handleSubmit = () => {
     dispatch(addressActions.createAddress({ address: addressDetails }))
-    // return navigate('/account/address')
+    navigate('/account/address')
   }
   return (
     <div className={styles.wrapper}>
